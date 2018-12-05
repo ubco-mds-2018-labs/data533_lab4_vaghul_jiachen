@@ -19,14 +19,18 @@ class MySQLInterface:
     def select(self, query):
         if(not self.__connect()):
             return None
-        output = []
-        cursor = self.cnx.cursor()
-        cursor.execute(query)
-        for row in cursor:
-            inner_list = []
-            for val in row:
-                inner_list.append(str(val).strip())
-            output.append(inner_list)
-        cursor.close()
-        self.cnx.close()
-        return pd.DataFrame(output)
+        try:
+            output = []
+            cursor = self.cnx.cursor()
+            cursor.execute(query)
+            for row in cursor:
+                inner_list = []
+                for val in row:
+                    inner_list.append(str(val).strip())
+                output.append(inner_list)
+            cursor.close()
+            self.cnx.close()
+            return pd.DataFrame(output)
+        except:
+            print("Cannot perform the SELECT query.")
+            return False

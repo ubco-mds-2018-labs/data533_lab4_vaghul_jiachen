@@ -23,14 +23,18 @@ class ODBCInterface:
     def select(self, query):
         if(not self.__connect()):
             return None
-        cursor = self.cnx.cursor()
-        cursor.execute(query) 
-        output = []
-        for row in cursor:
-            inner_list = []
-            for val in row:
-                inner_list.append(str(val).strip())  #remove trailing white spaces to create a dataframe
-            output.append(inner_list)
-        cursor.close()
-        self.cnx.close()
-        return pandas.DataFrame(output)
+        try:
+            cursor = self.cnx.cursor()
+            cursor.execute(query) 
+            output = []
+            for row in cursor:
+                inner_list = []
+                for val in row:
+                    inner_list.append(str(val).strip())  #remove trailing white spaces to create a dataframe
+                output.append(inner_list)
+            cursor.close()
+            self.cnx.close()
+            return pandas.DataFrame(output)
+         except:
+            print("Cannot perform the SELECT query.")
+            return False

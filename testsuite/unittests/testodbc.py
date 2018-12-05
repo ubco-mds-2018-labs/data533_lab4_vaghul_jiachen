@@ -17,6 +17,7 @@ class TestODBC(unittest.TestCase):
         
     def setUp(self):
         self.odbc_intfc = ODBCInterface('sql04.ok.ubc.ca', 'rlawrenc', 'test', 'workson')
+        self.bad_odbc_intfc = ODBCInterface('sql04.ok.ubc.ca', 'bad', 'password', 'workson')
         print("Instantiating test ODBC-interface object")
         
     def testODBC(self):
@@ -34,6 +35,9 @@ class TestODBC(unittest.TestCase):
         
         # Testing if the select method throws a pyodbc.Error for an empty query
         self.assertFalse(self.odbc_intfc.select( ""))
+        
+        # Testing if the connection is fine
+        self.assertEqual(self.bad_odbc_intfc.select("select * from emp"), None)
     
     def tearDown(self):
         del(self.odbc_intfc)

@@ -6,6 +6,7 @@ def dfSummary(data):
         return data.describe()  #statistical summary
     except:
         print("Unable to provide a statistical summary")
+        return False
         
 def colBoxPlot(data):
     boxplot_inputs = []

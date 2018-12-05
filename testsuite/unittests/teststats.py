@@ -19,6 +19,9 @@ class TestStats(unittest.TestCase):
         print("Instantiating test dataframe object")
         
     def testStats(self):
+        #Testing if dfSummary handles non-dataframe input
+        self.assertFalse(stats.dfSummary('not a dataframe'))
+        
         # Testing if the dfSummary method returns a dataframe
         self.assertIsInstance(stats.dfSummary(self.df), pd.DataFrame)
         

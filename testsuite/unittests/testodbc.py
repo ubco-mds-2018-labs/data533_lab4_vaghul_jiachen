@@ -42,4 +42,4 @@ class TestODBC(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         print("Destroying TestODBC object")
-        
+unittest.main()        

@@ -41,3 +41,4 @@ class TestStats(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         print("Destroying TestStats object")
+unittest.main()

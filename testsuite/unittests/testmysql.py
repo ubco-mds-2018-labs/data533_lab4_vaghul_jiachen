@@ -47,4 +47,4 @@ class TestMySQL(unittest.TestCase):  #creating a test class
     @classmethod
     def tearDownClass(cls):
         print("Destroying TestMySQL object")
-        
+unittest.main()        

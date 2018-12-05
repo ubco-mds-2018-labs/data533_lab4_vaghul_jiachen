@@ -46,4 +46,6 @@ class TestCleanup(unittest.TestCase):  #creating a test class
     @classmethod
     def tearDownClass(cls):
         print("Destroying TestCleanup object")
+
+unittest.main()
         

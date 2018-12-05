@@ -18,6 +18,7 @@ class TestMySQL(unittest.TestCase):  #creating a test class
         
     def setUp(self):
         self.mysql_intfc = MySQLInterface('cosc304.ok.ubc.ca', 'jwei', '11154549', 'WorksOn')
+        self.bad_mysql_intfc = MySQLInterface('cosc304.ok.ubc.ca', 'dummy', 'password', 'WorksOn')
         #creates a MySQLInterface object
         
     def test_MySQL(self):  # test case
@@ -40,6 +41,9 @@ class TestMySQL(unittest.TestCase):  #creating a test class
         correct = correct.T
         res_df = self.mysql_intfc.select("select * from dept where dno='D1'")
         self.assertTrue(correct.equals(res_df))
+        
+        # Testing if the connection is fine
+        self.assertEqual(self.bad_mysql_intfc.select("select * from emp"), None)
         
     def tearDown(self):
         print("Finished testing the test case.")

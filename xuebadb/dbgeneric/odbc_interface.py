@@ -35,6 +35,6 @@ class ODBCInterface:
             cursor.close()
             self.cnx.close()
             return pandas.DataFrame(output)
-         except:
+        except:
             print("Cannot perform the SELECT query.")
             return False

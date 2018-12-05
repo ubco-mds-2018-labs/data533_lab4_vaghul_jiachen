@@ -1,0 +1,10 @@
+language: python
+python:
+  - "3.4"
+  - "3.5"
+# command to run tests
+script:
+  - python testsuite/unittests/testcleanup.py
+  - python testsuite/unittests/teststats.py
+  - python testsuite/unittests/testodbc.py
+  - python testsuite/unittests/testmysql.py

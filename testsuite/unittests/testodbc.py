@@ -30,10 +30,10 @@ class TestODBC(unittest.TestCase):
         self.assertIsInstance(self.odbc_intfc.select("select * from emp"), pd.DataFrame)
         
         # Testing if the select method throws a pyodbc.ProgrammingError for an incorrect SELECT query
-        self.assertRaises(pyodbc.ProgrammingError, self.odbc_intfc.select, "select * from dummy_table")
+        self.assertFalse(self.odbc_intfc.select("select * from dummy_table"))
         
         # Testing if the select method throws a pyodbc.Error for an empty query
-        self.assertRaises(pyodbc.Error, self.odbc_intfc.select, "")
+        self.assertFalse(self.odbc_intfc.select( ""))
     
     def tearDown(self):
         del(self.odbc_intfc)

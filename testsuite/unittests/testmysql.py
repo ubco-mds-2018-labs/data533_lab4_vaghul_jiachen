@@ -33,7 +33,7 @@ class TestMySQL(unittest.TestCase):  #creating a test class
         self.assertIsInstance(self.mysql_intfc.select("select * from emp"), pd.DataFrame)
        
         # Testing if select() throws a mysql.connector.errors.ProgrammingError for an invalid SELECT query
-        self.assertRaises(mysql.connector.errors.ProgrammingError, self.mysql_intfc.select, "select * from fake_table")
+        self.assertFalse(self.mysql_intfc.select("select * from fake_table"))
         
         # Testing if the query result is correct
         correct = pd.DataFrame(pd.Series( ['D1', 'Management', 'E8'], index=[0,1,2]),columns=[0])

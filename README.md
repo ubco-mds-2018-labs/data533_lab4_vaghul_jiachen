@@ -14,10 +14,11 @@ In order to be able to use the package, you would have to install the following:
 
 Python packages:
 * pyodbc
-* mysql.connector
+* mysql-connector
 * pandas
 * numpy
 * missingno
+* matplotlib
 
 [ Microsoft ODBC Driver 17 ](https://docs.microsoft.com/en-us/sql/connect/python/python-driver-for-sql-server?view=sql-server-2017)
 

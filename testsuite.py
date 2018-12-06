@@ -1,15 +1,15 @@
 import unittest
 
 try:
-    from unittests.teststats import TestStats
-    from unittests.testodbc import TestODBC
-    from unittests.testcleanup import TestCleanup
-    from unittests.testmysql import TestMySQL
+    from teststats import TestStats
+    from testodbc import TestODBC
+    from testcleanup import TestCleanup
+    from testmysql import TestMySQL
 except ImportError:
-    from .unittests.teststats import TestStats
-    from .unittests.testodbc import TestODBC
-    from .unittests.testcleanup import TestCleanup
-    from .unittests.testmysql import TestMySQL
+    from .teststats import TestStats
+    from .testodbc import TestODBC
+    from .testcleanup import TestCleanup
+    from .testmysql import TestMySQL
 
 def testSuite():
     print("\n\n###################################################")

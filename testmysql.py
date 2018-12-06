@@ -1,13 +1,5 @@
-import os
-import sys
 import unittest
-import mysql.connector
 import pandas as pd
-
-# to access xuebadb (in the parent repository)
-parent_dir = os.path.normpath(os.path.join(os.getcwd(),'../..'))
-if parent_dir not in sys.path:
-    sys.path.insert(0, parent_dir)
 
 from xuebadb.dbgeneric.mysql_interface import MySQLInterface
 
@@ -51,4 +43,5 @@ class TestMySQL(unittest.TestCase):  #creating a test class
     @classmethod
     def tearDownClass(cls):
         print("Destroying TestMySQL object")
+
 unittest.main()        

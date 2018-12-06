@@ -1,12 +1,6 @@
-import os
-import sys
 import unittest
 import pandas as pd
 
-parent_dir = os.path.normpath(os.path.join(os.getcwd(), '../..'))
-if parent_dir not in sys.path:
-    sys.path.insert(0, parent_dir)
-    
 import xuebadb.dfanalysis.stats as stats
     
 class TestStats(unittest.TestCase):
@@ -44,4 +38,5 @@ class TestStats(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         print("Destroying TestStats object")
+
 unittest.main()

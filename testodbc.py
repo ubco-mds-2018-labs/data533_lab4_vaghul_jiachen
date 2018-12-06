@@ -1,13 +1,6 @@
-import os
-import sys
 import unittest
-import pyodbc
 import pandas as pd
 
-parent_dir = os.path.normpath(os.path.join(os.getcwd(), '../..'))
-if parent_dir not in sys.path:
-    sys.path.insert(0, parent_dir)
-    
 from xuebadb.dbgeneric.odbc_interface import ODBCInterface
     
 class TestODBC(unittest.TestCase):
@@ -46,4 +39,5 @@ class TestODBC(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         print("Destroying TestODBC object")
+        
 unittest.main()        

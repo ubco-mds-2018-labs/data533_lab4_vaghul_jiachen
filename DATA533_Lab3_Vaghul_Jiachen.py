@@ -1,7 +1,7 @@
 import xuebadb.dbgeneric.db_interface as dbintfc
 import xuebadb.dfanalysis.cleanup as cleanup
 import xuebadb.dfanalysis.stats as stats
-from testsuite import testsuite
+import testsuite
 
 # Testing out connectivity to a MySQL DB server using the package
 res_con = dbintfc.DBInterface('mysql', 'cosc304.ok.ubc.ca', 'vbalaji', '10796456', 'WorksOn')

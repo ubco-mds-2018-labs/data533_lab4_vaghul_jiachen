@@ -1,9 +1,17 @@
 language: python
 python:
   - "3.6"
-# command to run tests
+
+install:
+  - pip install pandas
+  - pip install pyodbc
+  - pip install mysql-connector
+  - pip install numpy
+  - pip install missingno
+  - pip install matplotlib
+  
 script:
-  - python testsuite/unittests/testcleanup.py
-  - python testsuite/unittests/teststats.py
-  - python testsuite/unittests/testodbc.py
-  - python testsuite/unittests/testmysql.py
+  - python testcleanup.py
+  - python teststats.py
+  - python testodbc.py
+  - python testmysql.py

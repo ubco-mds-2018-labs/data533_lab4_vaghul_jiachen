@@ -1,14 +1,7 @@
-import os
-import sys
 import unittest
 import pandas as pd
 import matplotlib
 
-# to access xuebadb (in the parent repository)
-parent_dir = os.path.normpath(os.path.join(os.getcwd(),'../..'))
-if parent_dir not in sys.path:
-    sys.path.insert(0, parent_dir)
-    
 import xuebadb.dfanalysis.cleanup as cu
 
 class TestCleanup(unittest.TestCase):  #creating a test class
@@ -47,5 +40,4 @@ class TestCleanup(unittest.TestCase):  #creating a test class
     def tearDownClass(cls):
         print("Destroying TestCleanup object")
 
-unittest.main()
-        
+unittest.main()        

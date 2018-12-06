@@ -3,7 +3,7 @@ Submission repository for DATA-533 Lab 3
 
 ## Travis CI Status:
 
-[![Build Status](https://travis-ci.org/vaghulb1992/data533_lab4_vaghul_jiachen.svg?branch=master)](https://travis-ci.org/vaghulb1992/data533_lab4_vaghul_jiachen)
+[![Build Status](https://travis-ci.org/vaghulb1992/data533_lab4_vaghul_jiachen.svg?branch=master)](https://travis-ci.org/vaghulb1992/data533_lab4_vaghul_jiachen)  
 *Please note that becasue we are connecting to UBC's DB servers, Travis will not be able to connect to them as it runs from another server at a different location. Becaause of this, we had to comment out some of the assert statements in the unittests that try to create a connection object in MySQL and ODBC so that Travis CI would be able to run successfully. Otherwise, it will fail everytime.*
 
 Group Members:
